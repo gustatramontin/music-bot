@@ -1,0 +1,21 @@
+{
+  "name": "poll-bot",
+  "version": "1.0.0",
+  "main": "main.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "pm2 start main.js --watch --name music-bot",
+    "start": "pm2 start main.js --name music-bot",
+    "stop": "pm2 stop music-bot",
+    "logs": "pm2 logs music-bot"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.6.0",
+    "@gtramontin/discord-commands": "^1.1.0",
+    "discord.js": "12.5.3",
+    "ffmpeg-static": "^4.4.0",
+    "puppeteer": "^10.4.0",
+    "ytdl-core": "^4.9.1",
+    "ytpl": "^2.2.3"
+  }
+}
