@@ -1,11 +1,15 @@
 
-const puppeteer = require('puppeteer')
+//const puppeteer = require('puppeteer')
+const ytsr = require('ytsr');
 
+/**
+ * Get the link of a search, it picks the first video
+ * 
+ * @param {string} query - the search query
+ */
 async function search(query)  {
-    /*
-    Uses web scrapping to directly search for the query
-    and it chooses the first on the list 
-    */
+   /* Old way using web scrapping
+   
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
@@ -23,6 +27,15 @@ async function search(query)  {
     });
     browser.close()
     return link
+    */
+
+
+    const searchResults = (await ytsr(query)).items[0]
+    return {
+        url: searchResults.url,
+        title: searchResults.title,
+        duration: searchResults.duration
+    } 
 }
 
 module.exports = search
@@ -32,5 +45,5 @@ if (require.main === module) {
     Codes to test the function
     only works when the file is executed directly
     */ 
-    search("bad habbits").then(link => console.log(link))
+    search("bad habits").then(link => console.log(link))
 }
