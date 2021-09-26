@@ -16,6 +16,7 @@
     "ffmpeg-static": "^4.4.0",
     "puppeteer": "^10.4.0",
     "ytdl-core": "^4.9.1",
-    "ytpl": "^2.2.3"
+    "ytpl": "^2.2.3",
+    "ytsr": "^3.5.3"
   }
 }
